@@ -1,0 +1,87 @@
+<div class="material-container">
+  <div class="material" *ngFor="let material of fullMap; let i = index">
+    <span [ngSwitch]="i">
+      <ng-container
+        *ngIf="i === 0 || i === 4 || i === 9 || i === 14 || i === 18"
+      >
+        <div
+          style="position: absolute"
+          [ngStyle]="{
+            marginTop: ((i - 5) / 4) * -20 + 'px'
+          }"
+        >
+          <span class="material__number">{{ material.number }}</span>
+          <img
+            class="material__img"
+            src="../../../assets/materials/{{ material.name }}.png"
+            alt="{{ material.name }}"
+          />
+        </div>
+      </ng-container>
+      <ng-container *ngIf="i === 1 || i === 6 || i === 11 || i === 16">
+        <div
+          style="position: absolute"
+          [ngStyle]="{
+            transform: 'translateX(-60px)',
+            marginTop: ((i - 2) / 5 + 1) * -20 + 'px'
+          }"
+        >
+          <span class="material__number">{{ material.number }}</span>
+          <img
+            class="material__img"
+            src="../../../assets/materials/{{ material.name }}.png"
+            alt="{{ material.name }}"
+          />
+        </div>
+      </ng-container>
+      <ng-container *ngIf="i === 2 || i === 7 || i === 12 || i === 17">
+        <div
+          style="position: absolute"
+          [ngStyle]="{
+            transform: 'translate(60px,-5px)',
+            marginTop: ((i - 2) / 5) * -20 + 'px'
+          }"
+        >
+          <span class="material__number">{{ material.number }}</span>
+          <img
+            class="material__img"
+            src="../../../assets/materials/{{ material.name }}.png"
+            alt="{{ material.name }}"
+          />
+        </div>
+      </ng-container>
+      <ng-container *ngIf="i === 8 || i === 3 || i === 13">
+        <div
+          style="position: absolute"
+          [ngStyle]="{
+            transform: 'translate(-120px,-30px)',
+            marginTop: ((i - 3) / 5) * -20 + 'px'
+          }"
+        >
+          <span class="material__number">{{ material.number }}</span>
+          <img
+            class="material__img"
+            src="../../../assets/materials/{{ material.name }}.png"
+            alt="{{ material.name }}"
+          />
+        </div>
+      </ng-container>
+      <ng-container *ngIf="i === 10 || i === 5 || i === 15">
+        <div
+          style="position: absolute"
+          [ngStyle]="{
+            transform: 'translate(120px,-5px)',
+            marginTop: ((i - 5) / 5) * -20 + 'px'
+          }"
+        >
+          <span class="material__number">{{ material.number }}</span>
+          <img
+            class="material__img"
+            src="../../../assets/materials/{{ material.name }}.png"
+            alt="{{ material.name }}"
+          />
+        </div>
+      </ng-container>
+    </span>
+  </div>
+</div>

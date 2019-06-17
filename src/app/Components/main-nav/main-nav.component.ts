@@ -10,7 +10,6 @@ import { map } from 'rxjs/operators';
   styleUrls: ['./main-nav.component.scss']
 })
 export class MainNavComponent implements OnInit {
-  public isExtension: boolean;
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
       map(result => result.matches)
@@ -26,9 +25,8 @@ export class MainNavComponent implements OnInit {
     } else {
       this.dsService.toggleControlMenu = !this.dsService.toggleControlMenu;
     }
-    console.log(this.dsService.toggleControlMenu);
+    console.log(this.dsService.isExtension);
   }
   ngOnInit(): void {
-    this.dsService.isExtension = this.isExtension;
   }
 }

@@ -29,7 +29,11 @@
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
       <!-- <span class="main-nav__logo"></span> -->
-      <img class="main-nav__logo" src="../../../assets/catanlogo_new2_0.png" alt="" />
+      <img
+        class="main-nav__logo"
+        src="../../../assets/catanlogo_new2_0.png"
+        alt=""
+      />
       <button
         type="button"
         class="main-nav__toggle-nav"
@@ -54,7 +58,7 @@
         <mat-radio-group
           aria-label="Choose number of players"
           class="control-panel__radio-group-container__group"
-          [(ngModel)]="isExtension"
+          [(ngModel)]="dsService.isExtension"
           (click)="toggleControlMenu(500)"
         >
           <mat-radio-button [value]="false">3-4</mat-radio-button>

@@ -1,0 +1,31 @@
+.material-container {
+  width         : 100vw;
+  height        : 100vh;
+  display       : flex;
+  flex-direction: column;
+  transform     : translate(-35px);
+
+  .material {
+    position: relative;
+    top     : 50%;
+    left    : 50%;
+    margin  : -5px;
+    display : flex;
+
+
+
+    &__number {
+      position : absolute;
+      top      : 50%;
+      left     : 50%;
+      transform: translate(-50%, -50%);
+      font-size: 3rem;
+    }
+
+    &__img {
+      max-height: 5rem;
+      max-width : 5rem;
+    }
+  }
+
+}

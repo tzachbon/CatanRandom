@@ -39,11 +39,15 @@ import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RandomaizerComponent } from './Components/randomaizer/randomaizer.component';
+import { RegularMapComponent } from './Components/randomaizer/regular-map/regular-map.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MainNavComponent
+    MainNavComponent,
+    RandomaizerComponent,
+    RegularMapComponent
   ],
   imports: [
     BrowserModule,

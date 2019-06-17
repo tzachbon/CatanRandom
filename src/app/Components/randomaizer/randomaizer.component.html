@@ -1,0 +1,16 @@
+<div class="randomizer">
+  <div class="stats">
+    <label for="stats"
+      >Number of playing players:
+      {{ dsService.isExtension ? '5-6' : '3-4' }}</label
+    >
+  </div>
+
+  <div class="map">
+    <ng-container *ngIf="dsService.isExtension; else regularMap">
+    </ng-container>
+    <ng-template class="map_regular" #regularMap>
+      <app-regular-map [fullMap]="fullMap"></app-regular-map>
+    </ng-template>
+  </div>
+</div>

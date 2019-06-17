@@ -1,0 +1,30 @@
+body {
+  margin : 0;
+  padding: 0;
+}
+
+
+.randomizer {
+  padding        : 2rem 0;
+  font-size      : 1.5rem;
+  color          : aliceblue;
+  display        : flex;
+  flex-direction : column;
+  flex-wrap      : wrap;
+  justify-content: space-between;
+  align-items    : center;
+  align-content  : center;
+
+  .stats {}
+
+  .map {
+    position: relative;
+
+    &__regular {
+      max-height: 80vh;
+      max-width : 80vw;
+    }
+
+
+  }
+}

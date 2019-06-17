@@ -1,0 +1,126 @@
+@import "../../../styles.scss";
+
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 200px;
+}
+
+.sidenav .mat-toolbar {
+  background: inherit;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top     : 0;
+  z-index : 1;
+}
+
+
+.main-nav {
+  position        : relative;
+  text-emphasis   : center;
+  background-image: linear-gradient(to bottom right, #BB862F, #E28D44 80%);
+  display         : flex;
+  flex-direction  : row;
+  flex-wrap       : wrap;
+  color           : whitesmoke;
+  box-shadow      : 0 1.6rem 1.6rem 0 rgba(0, 0, 0, 0.081);
+
+  &__logo {
+    background-repeat      : no-repeat;
+    height                 : 3rem;
+    width                  : 10rem;
+    margin                 : 0 auto;
+    background             : url('../../../assets/catanlogo_new2_0.png');
+    -webkit-background-size: cover;
+    -moz-background-size   : cover;
+    -o-background-size     : cover;
+    background-position-y  : 70%;
+    background-size        : cover;
+    filter                 : grayscale(90%);
+    transition             : all 0.4 linear;
+    ;
+
+    &:hover {
+      transition: all 0.4 linear;
+
+      filter: grayscale(90%) drop-shadow(0 0 0.75rem rgba(70, 39, 39, 0.301));
+    }
+  }
+
+
+}
+
+
+.dark-background {
+  position        : absolute;
+  height          : 100vh;
+  width           : 100vw;
+  background-color: rgba(0, 0, 0, 0.54);
+  z-index         : 0;
+  opacity         : 0;
+}
+
+.control-panel {
+  color                     : aliceblue;
+  position                  : absolute;
+  opacity                   : 0;
+  height                    : 0;
+  width                     : 100%;
+  background                : rgba(255, 208, 147, 0.211);
+  box-shadow                : 0 1rem 1rem 0 rgba(0, 0, 0, 0.246);
+  border-bottom-left-radius : 1.5rem;
+  border-bottom-right-radius: 1.5rem;
+  display                   : flex;
+  flex-direction            : column;
+  flex-wrap                 : wrap;
+  align-items               : center;
+  align-content             : center;
+  transition                : all .3s linear;
+  z-index                   : 2;
+
+  // &::after {
+  //   content         : "";
+  //   position        : absolute;
+  //   height          : 100vh;
+  //   width           : 100vw;
+  //   top             : 0;
+  //   left            : 0;
+  //   z-index         : -1;
+  //   background-color: rgba(0, 0, 0, 0.54);
+  // }
+
+  &__open {
+    transition: all .3s linear;
+    z-index   : 2;
+    opacity   : 1;
+    height    : 10%;
+    padding   : 1rem 0;
+
+  }
+
+  &__radio-group-container {
+    height         : 100%;
+    display        : flex;
+    flex-direction : column;
+    flex-wrap      : wrap;
+    justify-content: space-between;
+    align-items    : center;
+    align-content  : center;
+    transition     : all .5s linear;
+
+    &__group {
+      transition     : all .5s linear;
+      display        : flex;
+      flex-direction : column;
+      flex-wrap      : wrap;
+      justify-content: space-between;
+      align-items    : center;
+      align-content  : center;
+      margin         : 0 1rem;
+    }
+  }
+}

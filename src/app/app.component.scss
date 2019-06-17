@@ -1,0 +1,8 @@
+@import "../styles.scss";
+
+.main-app {
+  background: linear-gradient(to bottom right, rgba($primary, .7), rgba($accent, .3)),
+    url('../assets/catanback.jpg');
+  height: 100%;
+  width : calc(100%-2rem);
+}

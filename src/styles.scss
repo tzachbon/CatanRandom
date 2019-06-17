@@ -1,1 +1,105 @@
+$main-color: (50 : #fdf7e2,
+  100 : #fbeab7,
+  200 : #f8dc88,
+  300 : #f5ce58,
+  400 : #f2c434,
+  500 : #f0b910,
+  600 : #eeb20e,
+  700 : #ecaa0c,
+  800 : #e9a209,
+  900 : #e59305,
+  A100 : #ffffff,
+  A200 : #fff0da,
+  A400 : #ffdba7,
+  A700 : #ffd18d,
+  contrast: (50: white,
+    100: white,
+    200: white,
+    300: white,
+    400: white,
+    500: white,
+    600: white,
+    700: white,
+    800: white,
+    900: white,
+    A100: white,
+    A200: white,
+    A400: white,
+    A700: white,
+  ));
+
+
+$second-color: (50 : #feefef,
+  100 : #fdd6d6,
+  200 : #fcbbbb,
+  300 : #fba0a0,
+  400 : #fa8b8b,
+  500 : #f97777,
+  600 : #f86f6f,
+  700 : #f76464,
+  800 : #f65a5a,
+  900 : #f54747,
+  A100 : #ffffff,
+  A200 : #ffffff,
+  A400 : #ffe4e4,
+  A700 : #ffcaca,
+  contrast: (50: white,
+    100: white,
+    200: white,
+    300: white,
+    400: white,
+    500: white,
+    600: white,
+    700: white,
+    800: white,
+    900: white,
+    A100: white,
+    A200: white,
+    A400: white,
+    A700: white,
+  ));
+
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@import '~@angular/material/theming';
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$CatanRandom-primary            : mat-palette($main-color);
+$CatanRandom-accent             : mat-palette($second-color);
+
+// The warn palette is optional (defaults to red).
+$CatanRandom-warn: mat-palette($mat-red);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$CatanRandom-theme: mat-light-theme($CatanRandom-primary, $CatanRandom-accent, $CatanRandom-warn);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($CatanRandom-theme);
+
+$primary: mat-color($CatanRandom-primary);
+$accent : mat-color($CatanRandom-accent);
+$warn   : mat-color($CatanRandom-warn);
+
+
 /* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin     : 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}

@@ -1,0 +1,68 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav
+    #drawer
+    class="sidenav"
+    fixedInViewport="true"
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="!(isHandset$ | async)"
+  >
+    <mat-toolbar (click)="drawer.toggle()"
+      ><mat-icon class="mat-18">close</mat-icon></mat-toolbar
+    >
+    <mat-nav-list>
+      <a mat-list-item href="#">Link 1</a>
+      <a mat-list-item href="#">Link 2</a>
+      <a mat-list-item href="#">Link 3</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar class="main-nav">
+      <button
+        type="button"
+        class="main-nav__toggle-nav"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async"
+      >
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span class="main-nav__logo"></span>
+      <button
+        type="button"
+        class="main-nav__toggle-nav"
+        aria-label="Toggle sidenav"
+        (click)="toggleControlMenu()"
+        mat-icon-button
+      >
+        <mat-icon aria-label="Side nav toggle icon">{{
+          !dsService.toggleControlMenu ? 'add' : 'remove'
+        }}</mat-icon>
+      </button>
+    </mat-toolbar>
+    <div
+      class="control-panel "
+      [ngClass]="{ 'control-panel__open': dsService.toggleControlMenu }"
+    >
+      <div
+        *ngIf="dsService.toggleControlMenu"
+        class="control-panel__radio-group-container"
+      >
+        <label>Choose number of players</label>
+        <mat-radio-group
+          aria-label="Choose number of players"
+          class="control-panel__radio-group-container__group"
+          [(ngModel)]="isExtension"
+          (click)="toggleControlMenu(500)"
+        >
+          <mat-radio-button [value]="false">3-4</mat-radio-button>
+          <mat-radio-button [value]="true">5-6</mat-radio-button>
+        </mat-radio-group>
+      </div>
+    </div>
+    <div class="dark-background"></div>
+
+    <ng-content #app></ng-content>
+  </mat-sidenav-content>
+</mat-sidenav-container>

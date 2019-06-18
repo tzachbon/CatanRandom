@@ -1,5 +1,5 @@
 import { Game } from './../../Services/data-storage-service.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { DataStorageServiceService } from 'src/app/Services/data-storage-service.service';
 
 export interface GameMaterial {
@@ -12,16 +12,22 @@ export interface GameMaterial {
   templateUrl: './randomaizer.component.html',
   styleUrls: ['./randomaizer.component.scss']
 })
-export class RandomaizerComponent implements OnInit {
+export class RandomaizerComponent implements OnInit, OnDestroy {
   public showMap: boolean = true;
   public fullMap: GameMaterial[] = [];
+  public exSub: any;
   constructor(public dsService: DataStorageServiceService) { }
 
   ngOnInit() {
     this.initMap();
+    this.exSub = this.dsService.isExtensionSub.subscribe(isE => {
+      this.initMap();
+    })
   }
 
   initMap() {
+    this.showMap = false;
+    this.fullMap = [];
     let numbers = [];
     let materials = [];
     if (this.dsService.isExtension) {
@@ -72,13 +78,16 @@ export class RandomaizerComponent implements OnInit {
 
 
     console.log(this.fullMap);
+    setTimeout(() => {
+      this.showMap = true;
+    }, 300);
   }
 
   reShuffle(array) {
-    this.showMap = false;
+    // this.showMap = false;
     setTimeout(() => {
-      this.shuffle(array);
-      this.showMap = true;
+      this.initMap();
+      // this.showMap = true;
     }, 500);
   }
 
@@ -93,6 +102,10 @@ export class RandomaizerComponent implements OnInit {
     }
 
     return array;
+  }
+
+  ngOnDestroy() {
+    this.exSub.unsubscribe();
   }
 
 }

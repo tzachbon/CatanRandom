@@ -1,0 +1,54 @@
+@import "../../../styles.scss";
+
+.home-container {
+
+  .btn-conatiner {
+    position       : absolute;
+    display        : flex;
+    flex-direction : column;
+    flex-wrap      : wrap;
+    justify-content: center;
+    align-items    : center;
+    align-content  : stretch;
+    top            : 50%;
+    left           : 50%;
+    height         : 4rem;
+    width          : 4rem;
+    border-radius  : 50%;
+    text-align     : center;
+    color          : aliceblue;
+    background     : $primary;
+    box-shadow     : 0 1rem 1rem 0 rgba(0, 0, 0, 0.322);
+    text-shadow    : 0 1rem 1rem  rgba(0, 0, 0, 0.522);
+    transform      : translate(-50%, -50%) scale(2);
+
+    span {
+      // top      : 50%;
+      // left     : 50%;
+      // transform: translate(-50%, -50%);
+    }
+  }
+
+  .animation {
+    -webkit-animation-name: fillScreen;
+    /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 1s;
+    /* Safari 4.0 - 8.0 */
+  }
+}
+
+@keyframes fillScreen {
+  0% {
+    content: ""
+  }
+
+  90% {
+    width : 100vw;
+    height: 100vh;
+  }
+
+  100% {
+    width : 0;
+    height: 0;
+  }
+}

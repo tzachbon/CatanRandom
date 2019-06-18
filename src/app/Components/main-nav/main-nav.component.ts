@@ -21,9 +21,11 @@ export class MainNavComponent implements OnInit {
     if (timer > 0) {
       setTimeout(() => {
         this.dsService.toggleControlMenu = !this.dsService.toggleControlMenu;
+        this.dsService.isExtensionSub.next(this.dsService.toggleControlMenu);
       }, timer);
     } else {
       this.dsService.toggleControlMenu = !this.dsService.toggleControlMenu;
+      this.dsService.isExtensionSub.next(this.dsService.toggleControlMenu);
     }
     console.log(this.dsService.isExtension);
   }

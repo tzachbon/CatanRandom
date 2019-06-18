@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
 
 export interface Material {
   maxSum: number;
@@ -21,7 +22,8 @@ export interface Game {
 export class DataStorageServiceService {
   public toggleControlMenu: boolean;
   private readonly NUMBER_OF_MATERIAL = [19, 29];
-  public isExtension: boolean = true;
+  public isExtension: boolean = false;
+  public isExtensionSub = new Subject<boolean>();
   private regularMaterials: Material[] = [
     { maxSum: 3, name: 'clay' },
     { maxSum: 1, name: 'desert' },

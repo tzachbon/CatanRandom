@@ -42,6 +42,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RandomaizerComponent } from './Components/randomaizer/randomaizer.component';
 import { RegularMapComponent } from './Components/randomaizer/regular-map/regular-map.component';
 import { ExtensionMapComponent } from './Components/randomaizer/extension-map/extension-map.component';
+import { AboutUsComponent } from './Components/about-us/about-us.component';
+import { HomeComponent } from './Components/home/home.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +51,9 @@ import { ExtensionMapComponent } from './Components/randomaizer/extension-map/ex
     MainNavComponent,
     RandomaizerComponent,
     RegularMapComponent,
-    ExtensionMapComponent
+    ExtensionMapComponent,
+    AboutUsComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

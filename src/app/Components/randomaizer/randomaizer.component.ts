@@ -13,6 +13,7 @@ export interface GameMaterial {
   styleUrls: ['./randomaizer.component.scss']
 })
 export class RandomaizerComponent implements OnInit {
+  public showMap: boolean = true;
   public fullMap: GameMaterial[] = [];
   constructor(public dsService: DataStorageServiceService) { }
 
@@ -52,10 +53,14 @@ export class RandomaizerComponent implements OnInit {
 
 
     console.log(this.fullMap);
+  }
 
-
-
-
+  reShuffle(array) {
+    this.showMap = false;
+    setTimeout(() => {
+      this.shuffle(array);
+      this.showMap = true;
+    }, 500);
   }
 
   shuffle(array) {

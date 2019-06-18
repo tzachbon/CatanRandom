@@ -59,22 +59,23 @@
 }
 
 .control-panel {
-  color                     : aliceblue;
-  position                  : absolute;
-  opacity                   : 0;
-  height                    : 0;
-  width                     : 100%;
-  background                : rgba(255, 208, 147, 0.211);
-  box-shadow                : 0 1rem 1rem 0 rgba(0, 0, 0, 0.246);
-  border-bottom-left-radius : 1.5rem;
-  border-bottom-right-radius: 1.5rem;
-  display                   : flex;
-  flex-direction            : column;
-  flex-wrap                 : wrap;
-  align-items               : center;
-  align-content             : center;
-  transition                : all .3s linear;
-  z-index                   : 2;
+  color                        : aliceblue;
+  position                     : absolute;
+  opacity                      : 0;
+  height                       : 0;
+  width                        : 100%;
+  // background                : rgba(255, 208, 147, 0.211);
+  background-image             : linear-gradient(to bottom right, rgba(#C68D7A, 1), rgba(#CF8D37, 0.952));
+  box-shadow                   : 0 1rem 1rem 0 rgba(0, 0, 0, 0.246);
+  border-bottom-left-radius    : 1.5rem;
+  border-bottom-right-radius   : 1.5rem;
+  display                      : flex;
+  flex-direction               : column;
+  flex-wrap                    : wrap;
+  align-items                  : center;
+  align-content                : center;
+  transition                   : all .3s linear;
+  z-index                      : 2;
 
   // &::after {
   //   content         : "";

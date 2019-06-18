@@ -1,16 +1,67 @@
 <div class="material-container">
   <div class="material" *ngFor="let material of fullMap; let i = index">
     <span [ngSwitch]="i">
-      <ng-container
-        *ngIf="i === 0 || i === 4 || i === 9 || i === 14 || i === 18"
-      >
+      <ng-container *ngIf="i === 18 || i === 4">
         <div
           style="position: absolute"
           [ngStyle]="{
-            marginTop: ((i - 5) / 4) * -20 + 'px'
+            marginTop: (i / 4) * -20 + 'px'
           }"
         >
-          <span class="material__number">{{ material.number }}</span>
+          <span class="material__number">{{
+            material.number > 0 ? material.number : ''
+          }}</span>
+          <img
+            class="material__img"
+            src="../../../assets/materials/{{ material.name }}.png"
+            alt="{{ material.name }}"
+          />
+        </div>
+      </ng-container>
+      <ng-container *ngIf="i === 0">
+        <div
+          style="position: absolute"
+          [ngStyle]="{
+            marginTop: '10px'
+          }"
+        >
+          <span class="material__number">{{
+            material.number > 0 ? material.number : ''
+          }}</span>
+          <img
+            class="material__img"
+            src="../../../assets/materials/{{ material.name }}.png"
+            alt="{{ material.name }}"
+          />
+        </div>
+      </ng-container>
+      <ng-container *ngIf="i === 14">
+        <div
+          style="position: absolute"
+          [ngStyle]="{
+            marginTop: ((i - 4) / 5) * -30 + 'px'
+          }"
+        >
+          <span class="material__number">{{
+            material.number > 0 ? material.number : ''
+          }}</span>
+          <img
+            class="material__img"
+            src="../../../assets/materials/{{ material.name }}.png"
+            alt="{{ material.name }}"
+          />
+        </div>
+      </ng-container>
+      <ng-container *ngIf="i === 9">
+        <div
+          style="position: absolute"
+          [ngStyle]="{
+            marginTop: ((i - 4) / 5) * -40 + 'px'
+          }"
+        >
+          <span class="material__number">{{
+            material.number > 0 ? material.number : ''
+          }}</span>
           <img
             class="material__img"
             src="../../../assets/materials/{{ material.name }}.png"
@@ -26,7 +77,9 @@
             marginTop: ((i - 2) / 5 + 1) * -20 + 'px'
           }"
         >
-          <span class="material__number">{{ material.number }}</span>
+          <span class="material__number">{{
+            material.number > 0 ? material.number : ''
+          }}</span>
           <img
             class="material__img"
             src="../../../assets/materials/{{ material.name }}.png"
@@ -42,7 +95,9 @@
             marginTop: ((i - 2) / 5) * -20 + 'px'
           }"
         >
-          <span class="material__number">{{ material.number }}</span>
+          <span class="material__number">{{
+            material.number > 0 ? material.number : ''
+          }}</span>
           <img
             class="material__img"
             src="../../../assets/materials/{{ material.name }}.png"
@@ -58,7 +113,9 @@
             marginTop: ((i - 3) / 5) * -20 + 'px'
           }"
         >
-          <span class="material__number">{{ material.number }}</span>
+          <span class="material__number">{{
+            material.number > 0 ? material.number : ''
+          }}</span>
           <img
             class="material__img"
             src="../../../assets/materials/{{ material.name }}.png"
@@ -74,7 +131,9 @@
             marginTop: ((i - 5) / 5) * -20 + 'px'
           }"
         >
-          <span class="material__number">{{ material.number }}</span>
+          <span class="material__number">{{
+            material.number > 0 ? material.number : ''
+          }}</span>
           <img
             class="material__img"
             src="../../../assets/materials/{{ material.name }}.png"

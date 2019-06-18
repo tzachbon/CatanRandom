@@ -6,11 +6,21 @@
     >
   </div>
 
-  <div class="map">
+  <div class="spinner" *ngIf="!showMap">
+    <mat-spinner color="accent"></mat-spinner>
+  </div>
+
+  <div class="map" *ngIf="showMap">
     <ng-container *ngIf="dsService.isExtension; else regularMap">
     </ng-container>
     <ng-template class="map_regular" #regularMap>
       <app-regular-map [fullMap]="fullMap"></app-regular-map>
     </ng-template>
+  </div>
+
+  <div class="btn-container" *ngIf="showMap">
+    <button mat-raised-button (click)="reShuffle(fullMap)">
+      Mix <mat-icon class="mat-18">shuffle</mat-icon>
+    </button>
   </div>
 </div>

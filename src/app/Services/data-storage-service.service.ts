@@ -20,8 +20,8 @@ export interface Game {
 })
 export class DataStorageServiceService {
   public toggleControlMenu: boolean;
-  private readonly NUMBER_OF_MATERIAL = [19, 30];
-  public isExtension: boolean = false;
+  private readonly NUMBER_OF_MATERIAL = [19, 29];
+  public isExtension: boolean = true;
   private regularMaterials: Material[] = [
     { maxSum: 3, name: 'clay' },
     { maxSum: 1, name: 'desert' },
@@ -41,10 +41,35 @@ export class DataStorageServiceService {
     { sum: 2, number: 10 },
     { sum: 2, number: 11 },
     { sum: 1, number: 12 },
-  ]
+  ];
+  private extensionMaterials: Material[] = [
+    { maxSum: 5, name: 'clay' },
+    { maxSum: 2, name: 'desert' },
+    { maxSum: 6, name: 'grain' },
+    { maxSum: 5, name: 'ore' },
+    { maxSum: 6, name: 'wool' },
+    { maxSum: 6, name: 'wood' },
+  ];
+  private extensionNumbers: Number[] = [
+    { sum: 2, number: 2 },
+    { sum: 3, number: 3 },
+    { sum: 3, number: 4 },
+    { sum: 3, number: 5 },
+    { sum: 3, number: 6 },
+    { sum: 3, number: 8 },
+    { sum: 3, number: 9 },
+    { sum: 3, number: 10 },
+    { sum: 3, number: 11 },
+    { sum: 2, number: 12 },
+  ];
+
+
   public gameRegular: Game = {
     materiels: this.regularMaterials, numbers: this.regularNumbers
-  }
+  };
+  public extensionRegular: Game = {
+    materiels: this.extensionMaterials, numbers: this.extensionNumbers
+  };
   constructor() { }
 
   public getNumOfMaterial() {

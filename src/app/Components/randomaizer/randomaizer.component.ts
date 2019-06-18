@@ -24,21 +24,37 @@ export class RandomaizerComponent implements OnInit {
   initMap() {
     let numbers = [];
     let materials = [];
-    this.dsService.gameRegular.materiels.forEach(material => {
-      for (let i = 0; i < material.maxSum; i++) {
-        materials.push(material.name);
-      }
-    });
-    this.dsService.gameRegular.numbers.forEach(number => {
-      for (let o = 0; o < number.sum; o++) {
-        numbers.push(number.number);
-      }
-    });
+    if (this.dsService.isExtension) {
+      this.dsService.extensionRegular.materiels.forEach(material => {
+        for (let i = 0; i < material.maxSum; i++) {
+          materials.push(material.name);
+        }
+      });
+      this.dsService.extensionRegular.numbers.forEach(number => {
+        for (let o = 0; o < number.sum; o++) {
+          numbers.push(number.number);
+        }
+      });
+    } else {
+      this.dsService.gameRegular.materiels.forEach(material => {
+        for (let i = 0; i < material.maxSum; i++) {
+          materials.push(material.name);
+        }
+      });
+      this.dsService.gameRegular.numbers.forEach(number => {
+        for (let o = 0; o < number.sum; o++) {
+          numbers.push(number.number);
+        }
+      });
+    }
 
     numbers = this.shuffle(numbers);
     materials = this.shuffle(materials);
-    const indexOfDesert = materials.indexOf('desert');
-    materials.splice(indexOfDesert, 1);
+    const numOfDes = this.dsService.isExtension ? 2 : 1;
+    for (let i = 0; i < numOfDes; i++) {
+      const indexOfDesert = materials.indexOf('desert');
+      materials.splice(indexOfDesert, 1);
+    }
 
     for (let i = 0; i < this.dsService.getNumOfMaterial() - 1; i++) {
       const gameMaterial: GameMaterial = {
@@ -47,9 +63,12 @@ export class RandomaizerComponent implements OnInit {
       }
       this.fullMap.push(gameMaterial);
     }
-    const randomNum = Math.round((Math.random() * this.dsService.getNumOfMaterial() - 1) + 1);
-    const desert = ({ name: 'desert', number: 0 });
-    this.fullMap.splice(randomNum, 0, desert);
+
+    for (let i = 0; i < numOfDes; i++) {
+      const randomNum = Math.round((Math.random() * this.dsService.getNumOfMaterial() - 1) + 1);
+      const desert = ({ name: 'desert', number: 0 });
+      this.fullMap.splice(randomNum, 0, desert);
+    }
 
 
     console.log(this.fullMap);

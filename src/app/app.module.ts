@@ -41,13 +41,15 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RandomaizerComponent } from './Components/randomaizer/randomaizer.component';
 import { RegularMapComponent } from './Components/randomaizer/regular-map/regular-map.component';
+import { ExtensionMapComponent } from './Components/randomaizer/extension-map/extension-map.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainNavComponent,
     RandomaizerComponent,
-    RegularMapComponent
+    RegularMapComponent,
+    ExtensionMapComponent
   ],
   imports: [
     BrowserModule,

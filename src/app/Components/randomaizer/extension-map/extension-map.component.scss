@@ -1,0 +1,33 @@
+.material-container {
+  height        : 50vh;
+  display       : flex;
+  flex-direction: column;
+  transform     : translate(-30px, 20rem);
+
+  .material {
+    position : relative;
+    display  : flex;
+    // transform: translateX(2.2rem);
+    filter   : drop-shadow(8px 8px 10px rgba(0, 0, 0, 0.13));
+
+    &__number {
+      position           : absolute;
+      top                : 50%;
+      left               : 50%;
+      transform          : translate(-50%, -50%);
+      font-size          : 1.7rem;
+      text-shadow        : 0 0 2px #000;
+      -moz-text-shadow   : 0 0 2px #000;
+      -webkit-text-shadow: 0 0 2px #000;
+      filter             : drop-shadow(1px 3px 5px #0000006b);
+      -webkit-filter     : drop-shadow(1px 3px 5px #0000006b);
+      -moz-filter        : drop-shadow(1px 3px 5px #0000006b);
+    }
+
+    &__img {
+      max-height: 4rem;
+      max-width : 4rem;
+    }
+  }
+
+}
